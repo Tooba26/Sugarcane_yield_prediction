@@ -10,12 +10,13 @@ COPY . /app
 # Install any needed dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 5000 available to the world outside this container
-EXPOSE 5000
+# Expose the port the app will run on
+EXPOSE 8080
 
-# Define environment variable to run the Flask app
+# Set the environment variable for Flask to run on port 8080
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=8080
 
 # Run the Flask app
 CMD ["flask", "run"]
