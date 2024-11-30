@@ -36,7 +36,7 @@ jobs:
           AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}  # Store your private key in GitHub Secrets
         run: |
           # Decode the SSH private key and save it as a file
-          echo $AWS_SSH_KEY | base64 --decode > /tmp/tooab.pem
+          echo $AWS_SSH_KEY | base64 --decode > C:\Users\acer\Downloads\tooab.pem
           
           # Set proper permissions for the private key
           chmod 600 /tmp/tooab.pem
