@@ -40,6 +40,8 @@ jobs:
           
           # Set proper permissions for the private key
           chmod 600 C:\Users\acer\Downloads\tooab.pem
+
+          ssh-keyscan -H ec2-user@ec2-3-86-33-55.compute-1.amazonaws.com >> C:\Users\acer\Downloads\known_hosts
           
           # SSH into EC2 and run Docker commands to pull and run the image
           ssh -i C:\Users\acer\Downloads\tooab.pem ec2-user@ec2-3-86-33-55.compute-1.amazonaws.com \
