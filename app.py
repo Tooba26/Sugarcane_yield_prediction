@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Load the model
 model = joblib.load(open('best_model_sugarcane_yield.pkl', 'rb'))
 
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -18,6 +19,7 @@ def predictor():
 @app.route('/result', methods=['POST'])
 def result():
     # Collect features from the form input
+    # Form
     wind_speed = float(request.form.get('wind_speed'))
     temp = float(request.form.get('temp'))
     hum = float(request.form.get('hum'))
